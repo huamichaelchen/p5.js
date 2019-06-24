@@ -37,8 +37,7 @@ module.exports = function(grunt) {
       }
 
       const bundle = browseified
-        .transform('babelify')
-        .transform('brfs')
+        .transform('babelify', { plugins: ['static-fs'] })
         .bundle();
 
       // Start the generated output with the banner comment,

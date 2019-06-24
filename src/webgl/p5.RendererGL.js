@@ -1,8 +1,8 @@
 'use strict';
 
 import p5 from '../core/main';
-import constants from '../core/constants';
-import libtess from 'libtess';
+import * as constants from '../core/constants';
+import * as libtess from 'libtess';
 import './p5.Shader';
 import './p5.Camera';
 import '../core/p5.Renderer';

@@ -7,7 +7,7 @@
 'use strict';
 
 import p5 from './main';
-import constants from '../core/constants';
+import * as constants from './constants';
 
 /**
  * Main graphics and rendering context, as well as the base API

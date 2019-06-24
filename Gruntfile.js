@@ -245,6 +245,7 @@ module.exports = grunt => {
         src: ['test/node/**/*.js'],
         options: {
           reporter: reporter,
+          require: '@babel/register',
           ui: 'tdd'
         }
       }

@@ -9,7 +9,6 @@ import '../core/p5.Renderer';
 import './p5.Matrix';
 import { readFileSync } from 'fs';
 import { join } from 'path';
-// const fs = require('fs');
 
 var lightingShader = readFileSync(
   join(__dirname, '/shaders/lighting.glsl'),

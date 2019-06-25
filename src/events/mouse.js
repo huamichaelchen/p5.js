@@ -371,7 +371,7 @@ p5.prototype.mouseIsPressed = false;
 
 p5.prototype._updateNextMouseCoords = function(e) {
   if (this._curElement !== null && (!e.touches || e.touches.length > 0)) {
-    var mousePos = getMousePos(
+    const mousePos = getMousePos(
       this._curElement.elt,
       this.width,
       this.height,
@@ -407,9 +407,9 @@ function getMousePos(canvas, w, h, evt) {
       evt = evt.changedTouches[0];
     }
   }
-  var rect = canvas.getBoundingClientRect();
-  var sx = canvas.scrollWidth / w || 1;
-  var sy = canvas.scrollHeight / h || 1;
+  const rect = canvas.getBoundingClientRect();
+  const sx = canvas.scrollWidth / w || 1;
+  const sy = canvas.scrollHeight / h || 1;
   return {
     x: (evt.clientX - rect.left) / sx,
     y: (evt.clientY - rect.top) / sy,
@@ -540,8 +540,8 @@ p5.prototype._setMouseButton = function(e) {
  *
  */
 p5.prototype._onmousemove = function(e) {
-  var context = this._isGlobal ? window : this;
-  var executeDefault;
+  const context = this._isGlobal ? window : this;
+  let executeDefault;
   this._updateNextMouseCoords(e);
   if (!this.mouseIsPressed) {
     if (typeof context.mouseMoved === 'function') {
@@ -624,8 +624,8 @@ p5.prototype._onmousemove = function(e) {
  *
  */
 p5.prototype._onmousedown = function(e) {
-  var context = this._isGlobal ? window : this;
-  var executeDefault;
+  const context = this._isGlobal ? window : this;
+  let executeDefault;
   this._setProperty('mouseIsPressed', true);
   this._setMouseButton(e);
   this._updateNextMouseCoords(e);
@@ -701,8 +701,8 @@ p5.prototype._onmousedown = function(e) {
  *
  */
 p5.prototype._onmouseup = function(e) {
-  var context = this._isGlobal ? window : this;
-  var executeDefault;
+  const context = this._isGlobal ? window : this;
+  let executeDefault;
   this._setProperty('mouseIsPressed', false);
   if (typeof context.mouseReleased === 'function') {
     executeDefault = context.mouseReleased(e);
@@ -781,9 +781,9 @@ p5.prototype._ondragover = p5.prototype._onmousemove;
  *
  */
 p5.prototype._onclick = function(e) {
-  var context = this._isGlobal ? window : this;
+  const context = this._isGlobal ? window : this;
   if (typeof context.mouseClicked === 'function') {
-    var executeDefault = context.mouseClicked(e);
+    const executeDefault = context.mouseClicked(e);
     if (executeDefault === false) {
       e.preventDefault();
     }
@@ -850,9 +850,9 @@ p5.prototype._onclick = function(e) {
  */
 
 p5.prototype._ondblclick = function(e) {
-  var context = this._isGlobal ? window : this;
+  const context = this._isGlobal ? window : this;
   if (typeof context.doubleClicked === 'function') {
-    var executeDefault = context.doubleClicked(e);
+    const executeDefault = context.doubleClicked(e);
     if (executeDefault === false) {
       e.preventDefault();
     }
@@ -918,11 +918,11 @@ p5.prototype._pmouseWheelDeltaY = 0;
  *
  */
 p5.prototype._onwheel = function(e) {
-  var context = this._isGlobal ? window : this;
+  const context = this._isGlobal ? window : this;
   this._setProperty('_mouseWheelDeltaY', e.deltaY);
   if (typeof context.mouseWheel === 'function') {
     e.delta = e.deltaY;
-    var executeDefault = context.mouseWheel(e);
+    const executeDefault = context.mouseWheel(e);
     if (executeDefault === false) {
       e.preventDefault();
     }

@@ -50,10 +50,10 @@ if (typeof IS_MINIFIED !== 'undefined') {
 
   const friendlyWelcome = () => {
     // p5.js brand - magenta: #ED225D
-    //var astrixBgColor = 'transparent';
-    //var astrixTxtColor = '#ED225D';
-    //var welcomeBgColor = '#ED225D';
-    //var welcomeTextColor = 'white';
+    //const astrixBgColor = 'transparent';
+    //const astrixTxtColor = '#ED225D';
+    //const welcomeBgColor = '#ED225D';
+    //const welcomeTextColor = 'white';
     console.log(
       '    _ \n' +
         ' /\\| |/\\ \n' +
@@ -561,7 +561,7 @@ if (typeof IS_MINIFIED !== 'undefined') {
    * param  {Array}                args    user input arguments
    *
    * example:
-   *  var a;
+   *  let a;
    *  ellipse(10,10,a,5);
    * console ouput:
    *  "It looks like ellipse received an empty variable in spot #2."
@@ -621,7 +621,7 @@ if (typeof IS_MINIFIED !== 'undefined') {
    * For color blindness testing.
    */
   /* function testColors() {
-    var str = 'A box of biscuits, a box of mixed biscuits and a biscuit mixer';
+    let str = 'A box of biscuits, a box of mixed biscuits and a biscuit mixer';
     report(str, 'print', '#ED225D'); // p5.js magenta
     report(str, 'print', '#2D7BB6'); // p5.js blue
     report(str, 'print', '#EE9900'); // p5.js orange

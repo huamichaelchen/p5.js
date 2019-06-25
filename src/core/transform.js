@@ -43,7 +43,7 @@ import p5 from './main';
  * }
  *
  * function draw() {
- *   var step = frameCount % 20;
+ *   const step = frameCount % 20;
  *   background(200);
  *   // Equivalent to translate(x, y);
  *   applyMatrix(1, 0, 0, 1, 40 + step, 50);
@@ -59,7 +59,7 @@ import p5 from './main';
  * }
  *
  * function draw() {
- *   var step = frameCount % 20;
+ *   const step = frameCount % 20;
  *   background(200);
  *   translate(50, 50);
  *   // Equivalent to scale(x, y);
@@ -76,10 +76,10 @@ import p5 from './main';
  * }
  *
  * function draw() {
- *   var step = frameCount % 20;
- *   var angle = map(step, 0, 20, 0, TWO_PI);
- *   var cos_a = cos(angle);
- *   var sin_a = sin(angle);
+ *   const step = frameCount % 20;
+ *   const angle = map(step, 0, 20, 0, TWO_PI);
+ *   const cos_a = cos(angle);
+ *   const sin_a = sin(angle);
  *   background(200);
  *   translate(50, 50);
  *   // Equivalent to rotate(angle);
@@ -96,12 +96,12 @@ import p5 from './main';
  * }
  *
  * function draw() {
- *   var step = frameCount % 20;
- *   var angle = map(step, 0, 20, -PI / 4, PI / 4);
+ *   const step = frameCount % 20;
+ *   const angle = map(step, 0, 20, -PI / 4, PI / 4);
  *   background(200);
  *   translate(50, 50);
  *   // equivalent to shearX(angle);
- *   var shear_factor = 1 / tan(PI / 2 - angle);
+ *   const shear_factor = 1 / tan(PI / 2 - angle);
  *   applyMatrix(1, 0, shear_factor, 1, 0, 0);
  *   rect(0, 0, 50, 50);
  * }
@@ -119,10 +119,10 @@ import p5 from './main';
  *   rotateY(PI / 6);
  *   stroke(153);
  *   box(35);
- *   var rad = millis() / 1000;
+ *   const rad = millis() / 1000;
  *   // Set rotation angles
- *   var ct = cos(rad);
- *   var st = sin(rad);
+ *   const ct = cos(rad);
+ *   const st = sin(rad);
  *   // Matrix for rotation around the Y axis
  *   // prettier-ignore
  *   applyMatrix(  ct, 0.0,  st,  0.0,

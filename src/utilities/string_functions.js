@@ -25,9 +25,9 @@ import '../core/error_helpers';
  * @example
  * <div>
  * <code>
- * var array = ['Hello', 'world!'];
- * var separator = ' ';
- * var message = join(array, separator);
+ * let array = ['Hello', 'world!'];
+ * let separator = ' ';
+ * let message = join(array, separator);
  * text(message, 5, 50);
  * </code>
  * </div>
@@ -66,9 +66,9 @@ p5.prototype.join = function(list, separator) {
  * @example
  * <div>
  * <code>
- * var string = 'Hello p5js*!';
- * var regexp = 'p5js\\*';
- * var m = match(string, regexp);
+ * let string = 'Hello p5js*!';
+ * let regexp = 'p5js\\*';
+ * let m = match(string, regexp);
  * text(m, 5, 50);
  * </code>
  * </div>
@@ -108,8 +108,8 @@ p5.prototype.match = function(str, reg) {
  * @example
  * <div class="norender">
  * <code>
- * var string = 'Hello p5js*! Hello world!';
- * var regexp = 'Hello';
+ * let string = 'Hello p5js*! Hello world!';
+ * let regexp = 'Hello';
  * matchAll(string, regexp);
  * </code>
  * </div>
@@ -151,14 +151,14 @@ p5.prototype.matchAll = function(str, reg) {
  * @example
  * <div>
  * <code>
- * var myFont;
+ * let myFont;
  * function preload() {
  *   myFont = loadFont('assets/fonts/inconsolata.ttf');
  * }
  * function setup() {
  *   background(200);
- *   var num1 = 321;
- *   var num2 = -1321;
+ *   let num1 = 321;
+ *   let num2 = -1321;
  *
  *   noStroke();
  *   fill(0);
@@ -255,8 +255,8 @@ function doNf(num, left, right) {
  * <code>
  * function setup() {
  *   background(200);
- *   var num = 11253106.115;
- *   var numArr = [1, 1, 2];
+ *   let num = 11253106.115;
+ *   let numArr = [1, 1, 2];
  *
  *   noStroke();
  *   fill(0);
@@ -332,8 +332,8 @@ function doNfc(num, right) {
  * <code>
  * function setup() {
  *   background(200);
- *   var num1 = 11253106.115;
- *   var num2 = -11253106.115;
+ *   let num1 = 11253106.115;
+ *   let num2 = -11253106.115;
  *
  *   noStroke();
  *   fill(0);
@@ -400,14 +400,14 @@ function addNfp(num) {
  * @example
  * <div>
  * <code>
- * var myFont;
+ * let myFont;
  * function preload() {
  *   myFont = loadFont('assets/fonts/inconsolata.ttf');
  * }
  * function setup() {
  *   background(200);
- *   var num1 = 321;
- *   var num2 = -1321;
+ *   let num1 = 321;
+ *   let num2 = -1321;
  *
  *   noStroke();
  *   fill(0);
@@ -469,8 +469,8 @@ function addNfs(num) {
  * @example
  * <div>
  * <code>
- * var names = 'Pat,Xio,Alex';
- * var splitString = split(names, ',');
+ * let names = 'Pat,Xio,Alex';
+ * let splitString = split(names, ',');
  * text(splitString[0], 5, 30);
  * text(splitString[1], 5, 50);
  * text(splitString[2], 5, 70);
@@ -504,8 +504,8 @@ p5.prototype.split = function(str, delim) {
  * <div class = "norender">
  * <code>
  * function setup() {
- *   var myStr = 'Mango, Banana, Lime';
- *   var myStrArr = splitTokens(myStr, ',');
+ *   let myStr = 'Mango, Banana, Lime';
+ *   let myStrArr = splitTokens(myStr, ',');
  *
  *   print(myStrArr); // prints : ["Mango"," Banana"," Lime"]
  * }
@@ -551,7 +551,7 @@ p5.prototype.splitTokens = function(value, delims) {
  * @example
  * <div>
  * <code>
- * var string = trim('  No new lines\n   ');
+ * let string = trim('  No new lines\n   ');
  * text(string + ' here', 2, 50);
  * </code>
  * </div>

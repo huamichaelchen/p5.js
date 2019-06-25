@@ -1083,8 +1083,8 @@ p5.RendererGL.prototype._getEmptyTexture = function() {
 
 p5.RendererGL.prototype.getTexture = function(img) {
   const textures = this.textures;
-  for (let it = 0; it < textures.length; ++it) {
-    const texture = textures[it];
+
+  for (const texture of textures) {
     if (texture.src === img) return texture;
   }
 
@@ -1218,10 +1218,11 @@ p5.RendererGL.prototype._flatten = function(arr) {
  */
 p5.RendererGL.prototype._vToNArray = function(arr) {
   const ret = [];
-  for (let i = 0; i < arr.length; i++) {
-    const item = arr[i];
+
+  for (const item of arr) {
     ret.push(item.x, item.y, item.z);
   }
+
   return ret;
 };
 

@@ -247,8 +247,8 @@ p5.prototype.textWidth = function(theText) {
  * </code>
  * </div>
  */
-p5.prototype.textAscent = function() {
-  p5._validateParameters('textAscent', arguments);
+p5.prototype.textAscent = function(...args) {
+  p5._validateParameters('textAscent', args);
   return this._renderer.textAscent();
 };
 
@@ -276,8 +276,8 @@ p5.prototype.textAscent = function() {
  * </code>
  * </div>
  */
-p5.prototype.textDescent = function() {
-  p5._validateParameters('textDescent', arguments);
+p5.prototype.textDescent = function(...args) {
+  p5._validateParameters('textDescent', args);
   return this._renderer.textDescent();
 };
 

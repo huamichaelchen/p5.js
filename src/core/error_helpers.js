@@ -276,8 +276,8 @@ if (typeof IS_MINIFIED !== 'undefined') {
               const names = [];
 
               constant = mapConstants[format.name] = {
-                values: values,
-                names: names
+                values,
+                names
               };
 
               const myArray = myRe.exec(format.description);
@@ -336,8 +336,8 @@ if (typeof IS_MINIFIED !== 'undefined') {
       });
     });
     return {
-      overloads: overloads,
-      maxParams: maxParams
+      overloads,
+      maxParams
     };
   };
 
@@ -449,15 +449,15 @@ if (typeof IS_MINIFIED !== 'undefined') {
       return [
         {
           type: 'TOO_FEW_ARGUMENTS',
-          argCount: argCount,
-          minParams: minParams
+          argCount,
+          minParams
         }
       ];
     } else if (argCount > formats.length) {
       return [
         {
           type: 'TOO_MANY_ARGUMENTS',
-          argCount: argCount,
+          argCount,
           maxParams: formats.length
         }
       ];
@@ -474,15 +474,15 @@ if (typeof IS_MINIFIED !== 'undefined') {
           errorArray.push({
             type: 'EMPTY_VAR',
             position: p,
-            format: format
+            format
           });
         }
       } else if (testParamTypes(arg, format.types) > 0) {
         errorArray.push({
           type: 'WRONG_TYPE',
           position: p,
-          format: format,
-          arg: arg
+          format,
+          arg
         });
       }
     }
@@ -713,7 +713,7 @@ const defineMisusedAtTopLevelCode = function() {
           type = 'variable';
         }
 
-        return { name: name, type: type };
+        return { name, type };
       });
   };
 

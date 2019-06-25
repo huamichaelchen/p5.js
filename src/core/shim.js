@@ -78,9 +78,10 @@ window.requestAnimationFrame = (function() {
         source = Object(arguments[s]);
         props = keys(source);
         if (hasSymbols && Object.getOwnPropertySymbols) {
-          props.push.apply(
-            props,
-            Object.getOwnPropertySymbols(source).filter(isEnumerableOn(source))
+          props.push(
+            ...Object.getOwnPropertySymbols(source).filter(
+              isEnumerableOn(source)
+            )
           );
         }
         for (i = 0; i < props.length; ++i) {

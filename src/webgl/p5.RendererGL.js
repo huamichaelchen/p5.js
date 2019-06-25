@@ -476,7 +476,7 @@ p5.RendererGL.prototype._update = function() {
  * [background description]
  */
 p5.RendererGL.prototype.background = function(...args) {
-  const _col = this._pInst.color.apply(this._pInst, args);
+  const _col = this._pInst.color(...args);
   const _r = _col.levels[0] / 255;
   const _g = _col.levels[1] / 255;
   const _b = _col.levels[2] / 255;
@@ -1194,7 +1194,7 @@ p5.RendererGL.prototype._flatten = function(arr) {
     node = nodes.pop();
     do {
       if (toString.call(node) === arrayTypeStr) {
-        nodes.push.apply(nodes, node);
+        nodes.push(...node);
       } else {
         result.push(node);
       }
@@ -1204,7 +1204,7 @@ p5.RendererGL.prototype._flatten = function(arr) {
   } else {
     //otherwise if model within limits for browser
     //use faster recursive loading
-    return [].concat.apply([], arr);
+    return [].concat(...arr);
   }
 };
 

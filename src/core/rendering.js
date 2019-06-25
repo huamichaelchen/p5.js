@@ -71,10 +71,10 @@ p5.prototype.createCanvas = function(w, h, renderer) {
     if (!this._defaultGraphicsCreated) {
       c = document.createElement('canvas');
       let i = 0;
-      while (document.getElementById('defaultCanvas' + i)) {
+      while (document.getElementById(`defaultCanvas${i}`)) {
         i++;
       }
-      defaultId = 'defaultCanvas' + i;
+      defaultId = `defaultCanvas${i}`;
       c.id = defaultId;
       c.classList.add(defaultClass);
     } else {

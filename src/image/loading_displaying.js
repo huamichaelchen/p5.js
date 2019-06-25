@@ -69,7 +69,7 @@ p5.prototype.loadImage = function(path, successCallback, failureCallback) {
   const pImg = new p5.Image(1, 1, this);
 
   const self = this;
-  img.onload = function() {
+  img.onload = () => {
     pImg.width = pImg.canvas.width = img.width;
     pImg.height = pImg.canvas.height = img.height;
 
@@ -83,7 +83,7 @@ p5.prototype.loadImage = function(path, successCallback, failureCallback) {
 
     self._decrementPreload();
   };
-  img.onerror = function(e) {
+  img.onerror = e => {
     p5._friendlyFileLoadError(0, img.src);
     if (typeof failureCallback === 'function') {
       failureCallback(e);

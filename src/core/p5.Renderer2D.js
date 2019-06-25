@@ -234,7 +234,7 @@ p5.Renderer2D.prototype.copy = function(...args) {
   this._pixelsState._pixelsDirty = true;
 };
 
-p5.Renderer2D._copyHelper = function(
+p5.Renderer2D._copyHelper = (
   dstImage,
   srcImage,
   sx,
@@ -245,7 +245,7 @@ p5.Renderer2D._copyHelper = function(
   dy,
   dw,
   dh
-) {
+) => {
   srcImage.loadPixels();
   const s = srcImage.canvas.width / srcImage.width;
   dstImage.drawingContext.drawImage(
@@ -468,7 +468,7 @@ p5.Renderer2D.prototype.arc = function(x, y, w, h, start, stop, mode) {
   // Fill curves
   if (this._doFill) {
     ctx.beginPath();
-    curves.forEach(function(curve, index) {
+    curves.forEach((curve, index) => {
       if (index === 0) {
         ctx.moveTo(x + curve.ax * rx, y + curve.ay * ry);
       }
@@ -488,7 +488,7 @@ p5.Renderer2D.prototype.arc = function(x, y, w, h, start, stop, mode) {
   // Stroke curves
   if (this._doStroke) {
     ctx.beginPath();
-    curves.forEach(function(curve, index) {
+    curves.forEach((curve, index) => {
       if (index === 0) {
         ctx.moveTo(x + curve.ax * rx, y + curve.ay * ry);
       }

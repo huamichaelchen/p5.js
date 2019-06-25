@@ -15,7 +15,7 @@ let y2 = 0;
 
 // Linear Congruential Generator
 // Variant of a Lehman Generator
-const lcg = (function() {
+const lcg = (() => {
   // Set to values from glibc(useb by GCC) (https://en.wikipedia.org/wiki/Linear_congruential_generator#Parameters_in_common_use)
   // m is basically chosen to be large (as it is the max period)
   // and for its relationships to a and c
@@ -73,7 +73,7 @@ const lcg = (function() {
  * many vertical lines drawn in white, black or grey.
  *
  */
-p5.prototype.randomSeed = function(seed) {
+p5.prototype.randomSeed = seed => {
   lcg.setSeed(seed);
   seeded = true;
   previous = false;
@@ -139,7 +139,7 @@ p5.prototype.randomSeed = function(seed) {
  * @return {*} the random element from the array
  * @example
  */
-p5.prototype.random = function(min, max) {
+p5.prototype.random = (min, max) => {
   let rand;
 
   if (seeded) {

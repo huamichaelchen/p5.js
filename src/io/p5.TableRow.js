@@ -29,11 +29,12 @@ p5.TableRow = function(str, separator) {
     separator = separator || ',';
     arr = str.split(separator);
   }
-  for (let i = 0; i < arr.length; i++) {
+
+  arr.forEach((val, i) => {
     const key = i;
-    const val = arr[i];
     obj[key] = val;
-  }
+  });
+
   this.arr = arr;
   this.obj = obj;
   this.table = null;

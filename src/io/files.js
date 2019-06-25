@@ -597,11 +597,12 @@ function makeObject(row, headers) {
       headers[j.toString()] = j;
     }
   }
-  for (let i = 0; i < headers.length; i++) {
-    const key = headers[i];
+
+  headers.forEach((key, i) => {
     const val = row[i];
     ret[key] = val;
-  }
+  });
+
   return ret;
 }
 

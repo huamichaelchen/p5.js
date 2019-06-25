@@ -1288,15 +1288,14 @@ p5.RendererGL.prototype._triangulate = function(contours) {
   const triangleVerts = [];
   this._tessy.gluTessBeginPolygon(triangleVerts);
 
-  for (let i = 0; i < contours.length; i++) {
+  contours.forEach((contour, i) => {
     this._tessy.gluTessBeginContour();
-    const contour = contours[i];
     for (let j = 0; j < contour.length; j += 3) {
       const coords = [contour[j], contour[j + 1], contour[j + 2]];
       this._tessy.gluTessVertex(coords, coords);
     }
     this._tessy.gluTessEndContour();
-  }
+  });
 
   // finish polygon
   this._tessy.gluTessEndPolygon();
